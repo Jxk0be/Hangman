@@ -165,7 +165,7 @@ int main() {
         }
 
         /* Label is for the nested for loop in line 55 error checking repeating guesses */
-        end:;
+		end:;
     }
     
     /* Returning 0 like a good little programmer boy */
