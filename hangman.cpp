@@ -58,7 +58,7 @@ int main() {
         wordList.push_back(words);
     }
 
-    /* Beggining Print Title/Info */
+    /* Beginning Print Title/Info */
     printf("------------------\nLet's play Hangman\n------------------\n");
     printf("1. Enter '!' to quit the game\n\n");
     printf("Let the game begin, guess a letter\n");
@@ -80,6 +80,7 @@ int main() {
         }
     }
 
+	/* Loop to grab letters or exit command */
     while (cin >> command) {
         command = tolower(command);
         size_t counter = 0;
@@ -116,10 +117,14 @@ int main() {
 		if (counter == underScores) {
 			++incorrect;
 			cout << '\n';
+
+			/* Everytime we have an incorrect letter, we need to print the hangman */
 			for (unsigned int i = 0; i < hangman[incorrect - 1].size(); ++i) {
 				cout << hangman[incorrect - 1][i] << '\n';
 			}
 			cout << '\n';
+
+			/* If the # of incorrect letters equals the # of hangman images, the user has lost the game */
 			if (incorrect == hangman.size()) {
 				printf("Sorry, you lost.\n");
 				printf("------------------INFO------------------\n");
@@ -127,7 +132,6 @@ int main() {
 				printf("----------------------------------------\n");
 				return 0;
 			}
-			//cout << hangman[incorrect - 1][hangman[incorrect - 1].size()] << '\n';
 		}
 
 		/* Updating the count of underScores each iteration of this loop to compare for next iteration */
