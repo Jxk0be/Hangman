@@ -167,8 +167,6 @@ int main() {
                 cout << guesses[i] << ' ';
             }
         }
-
-        /* Label is for the nested for loop in line 55 error checking repeating guesses */
 		end:;
     }
     
